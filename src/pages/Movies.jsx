@@ -12,7 +12,7 @@ function Movies() {
     return (
         <div style={{ background: "black" }}>
             <Jumbotron />
-            <FetchFilm/>
+            <FetchFilm />
         </div>
     );
 }

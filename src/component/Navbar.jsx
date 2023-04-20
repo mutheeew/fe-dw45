@@ -1,4 +1,5 @@
-import React, {useState } from "react";
+import React, {useState, useContext } from "react";
+import { UserContext } from "../context/user";
 import {
   Navbar,
   Nav,
@@ -15,6 +16,9 @@ import { CgProfile} from "react-icons/cg";
 import { MdPayment, MdLogout } from "react-icons/md";
 
 function Navbars() {
+  const [state, dispatch] = useContext(UserContext)
+  console.log("ini state: ", state)
+
   const [login, setLogin] = useState(false);
   const [register, setRegister] = useState(false);
 
@@ -26,6 +30,7 @@ function Navbars() {
 
   // Logout
   const logout = () => {
+    dispatch({type: "LOGOUT"})
     setValidlogin(false);
     setValidadmin(false)
     navigate("/");
@@ -82,7 +87,7 @@ function Navbars() {
             <img src={Logo} alt="dumbflix"/>
           </NavLink>
           <Nav className="gap-3">
-            {validlogin && validadmin && (
+            {state.isLogin && state.user.role==='admin' &&(
               <Dropdown>
               <Dropdown.Toggle className="btn-dark" ><img src={Profile} className="rounded-50" style={{width:"45px", height:"45px", borderRadius:"100%"}} ></img> </Dropdown.Toggle>
               <Dropdown.Menu className="bg-dark mt-4 ms-4">
@@ -106,7 +111,7 @@ function Navbars() {
               </Dropdown.Menu>
             </Dropdown>
             )}
-            {validlogin && !validadmin && (
+           {state.isLogin && state.user.role==='costumer' && (
               <Dropdown>
                 <Dropdown.Toggle className="btn-dark" >
                   <img src={Profile} className="rounded-50" style={{width:"45px", height:"45px", borderRadius:"100%"}} ></img> 
@@ -145,7 +150,7 @@ function Navbars() {
                 </Dropdown.Menu>
               </Dropdown>
               )}
-              {!validlogin &&(
+              {!state.isLogin &&(
                 <>
                 <RegisterForm
                   register={register}

@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../detail.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Profile from "../image/profile.jpg";
+// import Profile from "../image/profile.jpg";
 import { MdAccountCircle } from "react-icons/md";
 import { FiMail } from "react-icons/fi";
 import { RiVipLine } from "react-icons/ri";
@@ -114,10 +114,10 @@ function Profil() {
           </Col>
           <Col className="col-5">
             <img className="img-fluid"
-              src={Profile}
+              src={""}
               alt="Profile" ></img>
             <Button
-              className="mt-3 btn-danger" style={{width:"350px"}}>
+              className="mt-3 btn-danger" style={{width:"300px"}}>
               Change Photo Profile
             </Button>
           </Col>

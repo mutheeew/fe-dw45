@@ -38,6 +38,8 @@ function Details() {
               year={film.year}
               imageUrl={film.thumbnail}
               description={film.description}
+              link={film.LinkFilm }
+              id={id}
               // thumbnail={film.episode[0].thumbnailepisode}
               // title_episode={film.episode[0].title_episode}
             />

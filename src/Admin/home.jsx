@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <>
             <div style={{ background: "black" }}>
-                <div className='d-flex py-5'>
+                <div className='d-flex py-5 justify-content-end mx-5'>
                     {/* <Dropdown>
                     <Dropdown.Toggle>
                         Dropdown Button
@@ -23,7 +23,6 @@ const Home = () => {
                     </Dropdown.Menu>
                     </Dropdown> */}
                     <a className='btn btn-danger' href="/addfilm">Add Film</a>
-                    <a className='btn btn-danger' href="/addfilm">Delete Film</a>
                 </div>
             
             <Series linkto={'/detailseries'}/>

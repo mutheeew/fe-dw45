@@ -13,11 +13,11 @@ const AddFilm = () => {
         setEpisodes([...episodes, {}]);
     };
 
-    const handleRemoveEpisode = (index) => {
-        const newEpisodes = [...episodes];
-        newEpisodes.splice(index, 1);
-        setEpisodes(newEpisodes);
-    };
+    // const handleRemoveEpisode = (index) => {
+    //     const newEpisodes = [...episodes];
+    //     newEpisodes.splice(index, 1);
+    //     setEpisodes(newEpisodes);
+    // };
 // close
     const [imageUrl, setImageUrl] = useState();
     const [categoryId, setCategoryId] = useState([]);
@@ -148,9 +148,9 @@ const AddFilm = () => {
                         <Form.Group className="mb-3">
                             <Form.Control name="link" placeholder="Link Film" className="bg-dark text-white"/>
                         </Form.Group>
-                        <Button className="btn btn-dark border border-light" type="button" onClick={() => handleRemoveEpisode(index)}>
+                        {/* <Button className="btn btn-dark border border-light" type="button" onClick={() => handleRemoveEpisode(index)}>
                             -
-                        </Button>
+                        </Button> */}
                     </div>
                 ))}
                 <Button className="btn btn-dark border border-light" type="button" onClick={handleAddEpisode} style={{width:"58vw"}}>+</Button>
